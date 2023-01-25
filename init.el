@@ -225,7 +225,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(keycast)
+   dotspacemacs-additional-packages '(keycast elcord)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -340,7 +340,7 @@ It should only modify the values of Spacemacs settings."
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
    ;; dotspacemacs-startup-banner 'official
-   dotspacemacs-startup-banner (concat dotspacemacs-directory "banners/practicalli-logo.svg")
+   dotspacemacs-startup-banner 'official
 
    ;; Scale factor controls the scaling (size) of the startup banner. Default
    ;; value is `auto' for scaling the logo automatically to fit all buffer
@@ -401,10 +401,10 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
 
-   dotspacemacs-themes '(doom-gruvbox-light
+   dotspacemacs-themes '(kaolin-valley-dark
+                         doom-gruvbox-light
                          doom-solarized-light
                          doom-sourcerer
-                         kaolin-valley-dark
                          doom-solarized-dark
                          spacemacs-light
                          spacemacs-dark)
@@ -1374,6 +1374,11 @@ before packages are loaded."
   ;; end of old-school bindings
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+  (setq insert-directory-program "gls" dired-use-ls-dired t)
+  (setq dired-listing-switches "-al --group-directories-first")
+
+  (require 'elcord)
+  (elcord-mode)
 
   )   ;; End of dot-spacemacs/user-config
 
