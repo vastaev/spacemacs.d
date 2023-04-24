@@ -73,6 +73,12 @@ This function should only modify configuration layer settings."
               cider-repl-buffer-size-limit 100        ;; limit lines shown in REPL buffer
               )
 
+     (go :variables
+         go-backend 'lsp
+         go-tab-width 4
+         go-format-before-save t
+         go-use-golangci-lint t)
+
      ;; Nyan cat indicating relative position in current buffer
      ;; :variables colors-enable-nyan-cat-progress-bar (display-graphic-p)
      colors
@@ -426,7 +432,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Fira Code"
-                               :size 12.0
+                               :size 15.0
                                :weight normal
                                :width normal)
 
@@ -1378,7 +1384,6 @@ before packages are loaded."
   (setq dired-listing-switches "-al --group-directories-first")
 
   (require 'elcord)
-  (elcord-mode)
 
   )   ;; End of dot-spacemacs/user-config
 
