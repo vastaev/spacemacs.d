@@ -24,6 +24,7 @@
 ;; https://github.com/p3r7/clojure-essential-ref
 (spacemacs/set-leader-keys "oh" 'clojure-essential-ref)
 
+(modify-syntax-entry ?- "w" clojure-mode-syntax-table)
 
 
 ;; ---------------------------------------
