@@ -97,6 +97,16 @@
 (evil-define-key 'normal clojure-mode-map
   "zC" 'clojure-hack/toggle-comment-block
   "zO" (lambda () (interactive) (clojure-hack/toggle-comment-block 'open)))
+
+
+(defun custom-eval-dev-reset ()
+  (interactive)
+  (cider-interactive-eval
+   (format "(require 'dev)
+             (component-repl/reset)"
+           (cider-last-sexp))))
+
+(define-key global-map (kbd "s-1") 'custom-eval-dev-reset)
 ;; ---------------------------------------
 
 ;; ---------------------------------------
