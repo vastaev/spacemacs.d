@@ -4,6 +4,7 @@
 ;; General Configuration changes
 ;; ---------------------------------------
 (global-prettify-symbols-mode 1)
+(setq multi-term-program "/usr/local/bin/fish")
 
 ;; ---------------------------------------
 ;; Line numbers

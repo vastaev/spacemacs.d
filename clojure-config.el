@@ -24,7 +24,6 @@
 ;; https://github.com/p3r7/clojure-essential-ref
 (spacemacs/set-leader-keys "oh" 'clojure-essential-ref)
 
-(modify-syntax-entry ?- "w" clojure-mode-syntax-table)
 
 
 ;; ---------------------------------------
@@ -102,11 +101,8 @@
 (defun custom-eval-dev-reset ()
   (interactive)
   (cider-interactive-eval
-   (format "(require 'dev)
-             (component-repl/reset)"
+   (format "(in-ns 'dev) (component-repl/reset)"
            (cider-last-sexp))))
 
 (define-key global-map (kbd "s-1") 'custom-eval-dev-reset)
-;; ---------------------------------------
-
 ;; ---------------------------------------

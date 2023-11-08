@@ -170,8 +170,7 @@ This function should only modify configuration layer settings."
 
      ;; SPC ' runs shell in a popup buffer
      (shell :variables
-            shell-default-shell 'vterm
-            shell-default-term-shell "/usr/bin/zsh"
+            shell-default-shell 'multiterm
             shell-default-height 30
             shell-default-position 'bottom)
 
