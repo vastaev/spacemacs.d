@@ -100,8 +100,9 @@
 
 (defun custom-eval-dev-reset ()
   (interactive)
+  (cider-load-file (format  "%sdev/dev.clj" (projectile-project-root)))
   (cider-interactive-eval
-   (format "(do (require 'dev) (in-ns 'dev) (component-repl/reset))"
+   (format "(do (in-ns 'dev) (component-repl/reset))"
            (cider-last-sexp))))
 
 (define-key global-map (kbd "s-1") 'custom-eval-dev-reset)
